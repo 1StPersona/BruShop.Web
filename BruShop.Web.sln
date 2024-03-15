@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BruShop.Web", "BruShop.Web\BruShop.Web.csproj", "{458CF6E4-79C8-4C6E-A291-220164A74387}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{458CF6E4-79C8-4C6E-A291-220164A74387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458CF6E4-79C8-4C6E-A291-220164A74387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458CF6E4-79C8-4C6E-A291-220164A74387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458CF6E4-79C8-4C6E-A291-220164A74387}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BB8CA89-C078-4A4B-8196-E3AE2675896D}
+	EndGlobalSection
+EndGlobal

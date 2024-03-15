@@ -1,0 +1,337 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IOptions<RequestLocalizationOptions> locOptions
+@inject IViewLocalizer _lang
+
+@{
+    Layout = "_Layout";
+}
+<section class="slider">
+    <div class="container">
+        <div class="slider__inner">
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        МАГАЗИН КИСТОЧЕК РУЧНОЙ РАБОТЫ
+                    </div>
+                    <div class="slider__text">
+                        Каждая моя кисть - это уникальный маленький мир, который подарит дополнительное вдохновение
+                        для ваших шедевров. И добавит интересных деталей на фотографиях в соцсетях ✨🎨
+                    </div>
+                    <a class="slider__btn" href="#">
+                        Задать вопрос
+                    </a>
+                </div>
+            </div>
+
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        МАГАЗИН КИСТОЧЕК РУЧНОЙ РАБОТЫ
+                    </div>
+                    <div class="slider__text">
+                        🖌 Плоская упругая синтетическая кисть, которая отлично набирает воду и цвет, хорошо
+                        протирает бумагу.
+
+
+                        🖌 Круглая синтетика - упругая, хорошо управляемая и при этом довольно мягкая кисть. Плотная
+                        набивка, острый кончик и возможность ярко набирать цвет станут явными преимуществами при
+                        рисовании.
+
+
+                        🖌 Лайнер - длина ворса 30 мм. Упругая синтетика. Хорошо управляемая кисть вбирает в себя
+                        много цвета и позволяет проводить длинные тонкие линии.
+                    </div>
+                    <a class="slider__btn" href="#">
+                        Задать вопрос
+                    </a>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        МАГАЗИН КИСТОЧЕК РУЧНОЙ РАБОТЫ
+                    </div>
+                    <div class="slider__text">
+                        Также возможно создание кисточек по вашим идеям ✨
+
+                        Вставки и кончик выполнены из эпоксидной смолы и сухоцветов
+                    </div>
+                    <a class="slider__btn default__btn" href="#">
+                        Задать вопрос
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="menu  about__top">
+            <div class="about__title-box">
+                <div class="slider__title about-title">
+                    ТОВАРЫ
+                </div>
+                <div class="slider__text about-text">
+                    А какая кисть будет идеальной для вас?
+                    Скорее смотрите каталог и помните: "Не художник выбирает кисточку, а кисточка художника"
+                </div>
+            </div>
+            <div class="about__btn">
+                <a href="#">
+                    Показать все товары
+                </a>
+            </div>
+        </div>
+        <div class="about__items">
+            <div class="about__item">
+                <img src="img/img_about-1.jpg" width="200" alt="">
+                <div class="slider__title about__item-title">
+                    Лайнер (синтетика)
+                </div>
+                <div class="slider__text about__item-text">
+                    Хорошо управляемая кисть позволяет проводить длинные тонкие линии.
+                </div>
+                <div class="about__item-btn">
+                    <a class="about__item-link" href="#">Подробнее</a>
+                    <a class="default-btn basket-btn" href="#">В корзину</a>
+                </div>
+            </div>
+            <div class="about__item">
+                <img src="img/img_about-2.jpg" width="200" alt="">
+                <div class="slider__title about__item-title">
+                    Круглая (белка + енот)
+                </div>
+                <div class="slider__text about__item-text">
+                    cvbnj xdfghsdfghjk dfghjkl jkl dfghjcfghjk cvb Вбирает в себя много цвета и воды, имеет острый
+                    кончик.
+                </div>
+                <div class="about__item-btn">
+                    <a class="about__item-link" href="#">Подробнее</a>
+                    <a class="default-btn basket-btn" href="#">В корзину</a>
+                </div>
+            </div>
+            <div class="about__item">
+                <img src="img/img_about-3.jpg" width="200" alt="">
+                <div class="slider__title about__item-title">
+                    Плоская (синтетика)
+                </div>
+                <div class="slider__text about__item-text">
+                    Подходит для заливок и хорошо протирает бумагу
+                </div>
+                <div class="about__item-btn">
+                    <a class="about__item-link" href="#">Подробнее</a>
+                    <a class="default-btn basket-btn" href="#">В корзину</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="me">
+    <div class="container">
+        <div class="me__inner">
+            <div class="slider__title me__title">
+                Обо мне
+            </div>
+            <div class="slider__text me__text1">
+                Всем привет! Меня зовут Людмила. Я рисую, путешествую и занимаюсь кисточками! Всё началось с того,
+                что мне захотелось купить себе интересных штук для рисования...
+            </div>
+            <div class=" me__inner2">
+                <div class="slider__text me__text2">
+                    Одним из моих желаний была кисточка с эпокидной вставкой. Я перерыла много разных сайтов,
+                    страниц в инстаграме и в
+                    тиктоке, но никак не могла найти того, что нафантазировала у себя в голове. А когда пожаловалась
+                    на
+                    это маме, она сказала, что в моём случае проще взять и сделать самой. Ну я подумала почему бы и
+                    нет.
+                    Так и начался мой увлекательный путь в мир кисточек.
+                </div>
+            </div>
+            <a href="#" class="default-btn me__btn">
+                Читать дальше
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="form">
+    <div class="container">
+        <div class="form__inner">
+            <div class="form__content">
+                <div class="form__title-box">
+                    <div class="form__title slider__title">
+                        ЗАРЕГИСТРИРОВАТЬСЯ
+                    </div>
+                    <div class="form__text slider__text">
+                        Создайте аккаунт для оформления заказа и получения на почту интересных предложений.
+                    </div>
+                </div>
+                <div class="form__box">
+                    <form action="">
+                        <div class="form__box-inner">
+                            <div class="form__box-left">
+                                <div class="slider__title left__title">
+                                    ВХОД
+                                </div>
+                                <label>
+                                    Логин
+                                    <input type="text">
+                                </label>
+                                <label>
+                                    Пароль
+                                    <input type="text">
+                                </label>
+
+                                <button type="submit">Войти</button>
+                            </div>
+                            <div class="form__box-right">
+                                <div class="slider__title right__title">
+                                    РЕГИСТРАЦИЯ
+                                </div>
+                                <label>
+                                    Номер телефона
+                                    <input type="text">
+                                </label>
+                                <button type="submit">Зарегистрироваться</button>
+                                <div class="slider__text right__text">
+                                    Нажимая "Зарегистрироваться" вы соглашаетесь с обработкой персональных данных и
+                                    правилами сайта
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="news">
+    <div class="container">
+        <div class="menu  news__top">
+            <div class="news__title-box">
+                <div class="slider__title news-title">
+                    О КИСТОЧКАХ
+                </div>
+                <div class="slider__text news-text">
+                    Интересный факты о кисточках, описание процесса изготовления и отзывы покупателей
+                </div>
+            </div>
+            <div class="about__btn">
+                <a href="#">
+                    Показать все статьи
+                </a>
+            </div>
+        </div>
+        <div class="news__inner">
+            <div class="news__slider">
+                <div class="news__slider-inner">
+                    <div class="news__slider-item">
+                        <div class="slider__title news__slider-title">
+                            ОТЗЫВЫ
+                        </div>
+                        <div class="slider__text news__slider-text">
+                            Огонь! Лучшие кисточки! 1000000000000000000000000000000000 000000000000000000000000000000000 00000000000/10
+                        </div>
+                        <div class="slider__text news__slider-author">
+                            Создатель кисточек
+                        </div>
+                    </div>
+                    <div class="news__slider-item">
+                        <div class="slider__title news__slider-title">
+                            ОТЗЫВЫ
+                        </div>
+                        <div class="slider__text news__slider-text">
+                            Всем рекомендую
+                        </div>
+                        <div class="slider__text news__slider-author">
+                            Всё ещё создатель кисточек!
+                        </div>
+                    </div>
+                    <div class="news__slider-item">
+                        <div class="slider__title news__slider-title">
+                            ОТЗЫВЫ
+                        </div>
+                        <div class="slider__text news__slider-text">
+                            Создают шедевры практически сами!
+                        </div>
+                        <div class="slider__text news__slider-author">
+                            И снова создатель кисточек
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="news__blog">
+                <div class="news__img">
+                    <img src="img/news-1.jpg" width="270" alt="">
+                    <div class="news__date slider__text">14.05.22</div>
+                </div>
+                <div class="news__blog-title">Из чего я делаю кисточки?</div>
+                <div class="news__blog-text">
+                    Я их не делаю(((((((((((((((((((((( (((((((((((((((((((((((((((((((((
+                    ((((((((((((((((((((((((((((((((((((((((
+                </div>
+            </a>
+            <a href="#" class="news__blog">
+                <div class="news__img">
+                    <img src="img/news-2.jpg" width="270" alt="">
+                    <div class="slider__text news__date">14.05.22</div>
+                </div>
+                <div class="news__blog-title">Где найти время на любимое дело?</div>
+                <div class="news__blog-text ">Если узнаете, расскажите мне, пжлст</div>
+            </a>
+        </div>
+    </div>
+</section>
+<div id="modal">
+    <form action="index.php" method="post">
+        <div class="form__box-inner">
+            <div class="form__box-left">
+                <div class="slider__title left__title">
+                    ВХОД
+                </div>
+                <label>
+                    Логин
+                    <input type="text" name="login">
+                </label>
+                <label>
+                    Пароль
+                    <input type="password" name="password">
+                </label>
+                <button type="submit" name="enter" value="enter">Войти</button>
+            </div>
+            <div class="form__box-right">
+                <div class="slider__title right__title">
+                    РЕГИСТРАЦИЯ
+                </div>
+                <label>
+                    Номер телефона
+                    <input type="tel" name="phone">
+                </label>
+                <button type="submit" name="save" value="save">Зарегистрироваться</button>
+                <div class="slider__text right__text">
+                    Нажимая "Зарегистрироваться" вы соглашаетесь с обработкой персональных данных и
+                    правилами сайта
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <script>
+        function SetCulture(selectValue) {
+            var culture = "/?culture=" + selectValue;
+            console.log(culture);
+            document.getElementById("cultureForm").action = culture;
+            document.getElementById("cultureForm").submit();
+            //cultureForm
+        }
+    </script>
+}

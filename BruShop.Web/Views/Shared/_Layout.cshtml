@@ -1,0 +1,120 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IOptions<RequestLocalizationOptions> locOptions
+@inject IViewLocalizer _lang
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BruShop.Web</title>
+   
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="preconnect" href="~/css/fonts.css">
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="~/css/slick.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <header class="header">
+      @*   <div class="header__top">
+            <div class="container">
+                <a class="header__phone header__num" href="tel:79372040580">+7(937)2040580</a>
+                <a class="header__email header__num" href="#">bruShop@gmail.com</a>
+                <a data-fancybox data-src="#modal" href="javascript:;" class="header__login header__btn"
+                   href="#">Вход</a>
+                <a class="header__basket header__btn" href="#">Корзина</a>
+            </div>
+        </div> *@
+
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <div class="header__logo">
+                        <a href="#">
+                            <img src="img/logo.svg" width="300" alt="">
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <ul>
+                            <li>
+                                <a href="index.html">
+                                    <span class="icon-phone"></span>Главная
+                                </a>
+                            </li>
+                            <li>
+                            <form asp-action="Index" id="cultureForm">
+                                <label>Language</label>
+                                <select onchange="SetCulture(this.value);">
+                                    <option>Selecct Language</option>
+                                    @foreach (var item in locOptions.Value.SupportedUICultures)
+                                    {
+                                        <option value="@item.Name">@item.Name | @item.DisplayName</option>
+                                    }
+                                </select>
+                            </form>
+                            </li>
+                            
+                            <li><a href="product.html">Товары</a></li>
+                            <li><a href="#">Форум</a></li>
+                            <li><a href="articles.html">Статьи</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   
+            @RenderBody()
+
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="container">
+                <div class="slider__title footer__title">
+                    КОНТАКТЫ
+                </div>
+                <div class="slider__text footer__text">
+                    Всегда рада пообщаться с вами :)
+                    Задавайте вопросы любым удобным способом!
+                </div>
+                <ul class="footer__list">
+                    <li> <a class="slider__text footer__phone" href="tel:79372040580">+7(937)2040580</a> </li>
+                    <li> <a class="slider__text footer__email" href="#">bruShop@gmail.com</a> </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer__copy">
+            <div class="container">
+                <div class="copy__text">
+                    Made by DreamTeam ®
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @section scripts{
+        <script>
+            function SetCulture(selectValue) {
+                var culture = "/?culture=" + selectValue;
+                console.log(culture);
+                document.getElementById("cultureForm").action = culture;
+                document.getElementById("cultureForm").submit();
+                //cultureForm
+            }
+        </script>
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

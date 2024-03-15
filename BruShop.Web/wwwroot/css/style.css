@@ -1,0 +1,553 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: #404F3A;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #404F3A;
+}
+
+.header__top {
+    background-color: #404F3A;
+}
+
+.header__num {
+    color: #C1C6CF;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+}
+
+.header__btn {
+    float: right;
+    line-height: 36px;
+    color: #404F3A;
+    background-color: #C1C6CF;
+    padding: 5px 20px 5px 20px;
+    margin-right: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.header__phone {
+    padding-left: 50px;
+    padding-right: 30px;
+}
+
+.header__phone:before {
+    content: "\f095";
+    font-family: 'icomoon';
+
+}
+
+.header__email {
+    padding-left: 24px;
+}
+
+.header__content {
+    padding: 34px 0px 23px;
+}
+
+.header__content-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    font-size: 16px;
+    line-height: 36px;
+    border: 1px solid transparent;
+    padding: 0px 16px;
+    transition: all .3s;
+}
+
+.menu a:hover {
+    border-color: #948883;
+}
+
+.menu li+li {
+    padding-left: 10px;
+
+}
+
+#modal {
+    display: none;
+}
+
+.slider {
+    background-image: url(../img/s.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
+
+.slider__item-content {
+    text-align: center;
+    padding-top: 0px;
+    min-width: 665px;
+    margin: 0 auto;
+}
+
+.slider__title,
+.news__title {
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 36px;
+    color: #F5EAD8;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-bottom: 100px;
+}
+
+.slider__text,
+.news__text {
+    line-height: 24px;
+    font-size: 22px;
+    color: #C1C6CF;
+    margin-bottom: 90px;
+}
+
+.slider__btn {
+    line-height: 36px;
+    color: #404F3A;
+    background-color: #F5EAD8;
+    padding: 5px 20px 5px 20px;
+    margin-right: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.default-btn {
+    line-height: 36px;
+    color: #404F3A;
+    background-color: #C1C6CF;
+    padding: 5px 20px 5px 20px;
+    margin-right: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.slider__inner {
+    position: relative;
+}
+
+.slick-btn {
+    position: absolute;
+    top: 60%;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border: 1px #C1C6CF;
+    background-color: #F5EAD8;
+    color: #404F3A;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.about {
+    padding: 50px 0px 30px;
+}
+
+
+.about2 {
+    padding: 0px 0px 30px;
+}
+
+.news2{
+    margin-top: 0px;
+}
+
+.about__top,
+.news__top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+.about__title-box,
+.form__title-box,
+.news__title-box {
+    min-width: 520px;
+    padding-left: 150px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.about__title-box::before,
+.form__title-box::before,
+.news__title-box::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #404F3A;
+    left: 0;
+    top: 35px;
+}
+
+.about-title,
+.form__title,
+.news-title {
+    color: #404F3A;
+    margin-bottom: 20px;
+}
+
+.about-text,
+.form__text,
+.news-text {
+    color: #948883;
+    max-width: 570px;
+    max-height: 10px;
+}
+
+.about__btn a {
+    padding: 5px 38px;
+    font-size: 20px;
+    
+}
+
+.about__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__item {
+    max-width: 320px;
+    text-align: center;
+    padding: 15px 0px 30px;
+    position: relative;
+    min-height: 350px;
+    box-shadow: 0.5px 7px 9px 3px #948883;
+}
+
+.about__item-title {
+    color: #404F3A;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.about__item-text {
+    color: #948883;
+    font-size: 16px;
+    padding: 0px 10px 10px;
+    margin-bottom: 70px;
+}
+
+.about__items2{
+    margin-top: 50px;
+}
+
+.basket-btn {
+    line-height: 26px;
+    padding: 5px 10px 5px 10px;
+    margin-right: 0px;
+    font-weight: 600;
+}
+
+.about__item-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+}
+
+.about__item-link {
+    border-bottom: 1px solid #404F3A;
+    margin-right: 25px;
+}
+
+.me {
+    background-image: url(../img/me_fon.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    background-repeat: no-repeat;
+    padding: 25px 0px 35px;
+}
+
+.me__inner {
+    max-width: 680px;
+
+}
+
+.me__inner2 {
+    max-width: 350px;
+}
+
+.me__title {
+    margin-bottom: 50px;
+}
+
+.me__text1 {
+    margin-bottom: 1.5px;
+    color: #F5EAD8;
+}
+
+.me__text2 {
+    margin-bottom: 50px;
+    color: #F5EAD8;
+}
+
+.me__btn {
+    background-color: #F5EAD8;
+    color: #404F3A;
+}
+
+.form {
+    padding-top: 30px;
+}
+
+.form__inner {
+    background-image: url(../img/form_fon_Монтажная\ область\ 1.png);
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.form__title-box::before {
+    top: 17px;
+}
+
+.news__title-box::before {
+    top: 34px;
+}
+
+.form__title {
+    color: #404F3A;
+    margin-bottom: 20px;
+}
+
+.form__text {
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+
+}
+
+.form__box {
+    max-width: 850px;
+
+}
+
+.form__box-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__box-left {
+    max-width: 300px;
+    width: 100%;
+}
+
+.form__box-right {
+    max-width: 450px;
+    width: 100%;
+}
+
+.form__box-inner label,
+.form__box-inner input,
+.form__box-inner select {
+    display: block;
+}
+
+.form__box-inner label {
+    line-height: 36px;
+    color: #404F3A;
+}
+
+.form__box-inner input {
+    margin-bottom: 10px;
+}
+
+.right__title,
+.left__title {
+    color: #404F3A;
+    margin-bottom: 20px;
+}
+
+.right__text {
+    margin-top: 20px;
+    color: #948883;
+    font-size: 16px;
+    max-width: 350px;
+}
+
+.news-title {
+    color: #404F3A;
+}
+
+.news__text {
+    color: #404F3A;
+
+}
+
+.news {
+    padding: 0px 0px 50px;
+}
+
+.news__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news__slider {
+    background-image: url(../img/news-letter_Монтажная\ область\ 1.png);
+    min-height: 150px;
+    background-repeat: no-repeat;
+
+    background-position: 50px 200px;
+
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0.5px 7px 9px 3px #948883;
+    padding: 20px 25px 30px 70px;
+}
+
+.news__blog {
+    max-width: 270px;
+    width: 100%;
+    box-shadow: 0.5px 7px 9px 3px #948883;
+}
+
+.news__blog1 {
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0.5px 7px 9px 3px #948883;
+}
+
+.news__img {
+    position: relative;
+}
+
+.news__date {
+    position: absolute;
+    background-color: #F5EAD8;
+    height: 40px;
+    width: 110px;
+    color: #404F3A;
+    text-align: center;
+
+    font-weight: 150;
+    top: 5px;
+    left: 10px;
+    border-radius: 20px;
+    padding: 7px 20px 5px 20px;
+}
+
+.news__blog-title {
+    text-align: center;
+    padding: 7px 0;
+}
+
+.news__blog-text {
+    color: #948883;
+    padding: 7px 20px;
+}
+
+.news__slider-title{
+    color: #404F3A;
+    margin-bottom: 20px;
+}
+
+.news__slider-text{
+    color: #404F3A;
+    margin-bottom: 10px;
+}
+
+.news__slider-author{
+    text-align:right;
+    
+}
+
+.news__slider-inner .slick-btn{
+    top: 220px;
+}
+
+
+.news__slider-inner .slick-prev{
+    right: 60px;
+    left: auto;
+}
+
+.footer__content{
+    background-color: #948883;
+    padding: 20px 0px 30px;
+}
+
+.footer__copy{
+    background-color: #404F3A;
+}
+
+.copy__text{
+    color: #C1C6CF;
+    text-align: center;
+}
+
+.footer__title{
+    margin-bottom: 10px;
+}
+
+.footer__text{
+    margin-bottom: 10px;
+    color: #F5EAD8;
+}
+
+.footer__phone{
+    margin-bottom: 10px;
+    
+}
+
+.footer__email{
+    margin-bottom: 5px;
+   
+}
+
+.pay__title{
+    color:#404F3A;
+    margin-bottom: 20px;
+    }
+
+.pay__text{
+    margin-bottom: 15px;
+    }
+
+
