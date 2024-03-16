@@ -18,8 +18,14 @@ namespace BruShop.Web.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string culture)
         {
+            if(!string.IsNullOrWhiteSpace(culture)) 
+            {
+                CultureInfo.CurrentCulture = new CultureInfo(culture);
+                CultureInfo.CurrentUICulture = new CultureInfo(culture);
+            }
+
             _logger.LogInformation("LogInfo");
             _logger.LogError("LogError");
             _logger.LogWarning("LogWarning");

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Logs\" />
+    <Folder Include="Resources\Controllers\" />
   </ItemGroup>
 
 </Project>
