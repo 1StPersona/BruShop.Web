@@ -20,6 +20,10 @@ namespace BruShop.Web.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("LogInfo");
+            _logger.LogError("LogError");
+            _logger.LogWarning("LogWarning");
+
             return View();
         }
 

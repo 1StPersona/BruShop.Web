@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Options;
 using System.Globalization;
+using Serilog;
+using Serilog.Events;
 
 
 
@@ -12,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 ///Localization meethood 
 ///</summary>
 builder.Services.AddMvc().AddMvcLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+    
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var culture = new[]
@@ -27,6 +31,14 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
 builder.Services.AddLocalization(option => option.ResourcesPath = "Resourses");
 
+
+builder.Host.UseSerilog();
+
+Log.Logger = new LoggerConfiguration()
+        .WriteTo.Seq("http://localhost:5341/")
+        .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
+        .CreateLogger();
+builder.Services.AddSingleton<Serilog.ILogger>(Log.Logger);
 
 
 
