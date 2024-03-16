@@ -48,7 +48,7 @@
                             <form asp-action="Index" id="cultureForm">
                                 <label>Language</label>
                                 <select onchange="SetCulture(this.value);">
-                                    <option>Selecct Language</option>
+                                    <option>Select Language</option>
                                     @foreach (var item in locOptions.Value.SupportedUICultures)
                                     {
                                         <option value="@item.Name">@item.Name | @item.DisplayName</option>

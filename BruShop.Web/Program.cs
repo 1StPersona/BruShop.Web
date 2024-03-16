@@ -21,15 +21,16 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     var culture = new[]
     {
         new CultureInfo("ru-RU"),
-    new CultureInfo("en-US"),
-    new CultureInfo("kz-KZ")
+        new CultureInfo("en-US"),
+        new CultureInfo("kk-KZ")
     };
     options.DefaultRequestCulture = new RequestCulture(culture: "ru-RU", uiCulture: "ru-RU");
     options.SupportedCultures = culture;
     options.SupportedUICultures = culture;
 });
 
-builder.Services.AddLocalization(option => option.ResourcesPath = "Resourses");
+builder.Services.AddLocalization(option => option.ResourcesPath = "Resources");
+
 
 
 builder.Host.UseSerilog();
@@ -58,6 +59,9 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+var localOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(localOptions.Value);
 
 app.UseAuthorization();
 

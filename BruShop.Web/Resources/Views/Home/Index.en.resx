@@ -118,6 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="brushop" xml:space="preserve">
-    <value>МАГАЗИН КИСТОЧЕК РУЧНОЙ РАБОТЫ</value>
+    <value>SHOP OF HANDMADE BRUSHES</value>
+  </data>
+  <data name="question" xml:space="preserve">
+    <value>Ask a Question</value>
+  </data>
+  <data name="sliderDescription1" xml:space="preserve">
+    <value>Each of my brushes is a unique little world that will give additional inspiration
+for your masterpieces. And it will add interesting details to photos on social networks ✨🎨</value>
+  </data>
+  <data name="sliderDescription2" xml:space="preserve">
+    <value>🖌 A flat elastic synthetic brush that picks up water and color perfectly, good
+wipes the paper.
+
+
+🖌 Round synthetic brush - elastic, well controlled and at the same time quite soft. Dense
+padding, a sharp tip and the ability to brightly pick up color will be clear advantages when
+drawing.
+
+
+🖌 Liner - lint length 30 mm. Elastic synthetic. A well-controlled brush absorbs
+Lots of color and allows for long thin lines.</value>
+  </data>
+  <data name="sliderDescription3" xml:space="preserve">
+    <value>It is also possible to create brushes according to your ideas ✨
+
+The inserts and tip are made of epoxy resin and dried flowers</value>
   </data>
 </root>
