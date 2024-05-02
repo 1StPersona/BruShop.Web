@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IOptions<RequestLocalizationOptions> locOptions
+@inject IViewLocalizer _lang
+
+<header class="header">
+
+    <div class="header__content header__content2">
+        <div class="container">
+            <div class="header__content-inner">
+                <div class="header__logo">
+                    <a href="#">
+                        <img src="img/logo.svg" width="300" alt="">
+                    </a>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a asp-controller="Home" asp-action="Index">
+                                <span class="icon-phone"></span>Главная
+                            </a>
+                        </li>
+                        <li><a asp-controller="Payment" asp-action="Index">Доставка и оплата</a></li>
+                        <li><a asp-controller="Product" asp-action="Index">Товары</a></li>
+                        <li><a asp-controller="Home" asp-action="Index">Форум</a></li>
+                        <li><a asp-controller="Article" asp-action="Index">Статьи</a></li>
+                        <form asp-action="Index" id="cultureForm">
+                            <label>Language</label>
+                            <select onchange="SetCulture(this.value);">
+                                <option>Select Language</option>
+                                @foreach (var item in locOptions.Value.SupportedUICultures)
+                                {
+                                    <option value="@item.Name">@item.Name | @item.DisplayName</option>
+                                }
+                            </select>
+                        </form>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

@@ -18,84 +18,19 @@
     <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-    <header class="header">
-      @*   <div class="header__top">
-            <div class="container">
-                <a class="header__phone header__num" href="tel:79372040580">+7(937)2040580</a>
-                <a class="header__email header__num" href="#">bruShop@gmail.com</a>
-                <a data-fancybox data-src="#modal" href="javascript:;" class="header__login header__btn"
-                   href="#">Вход</a>
-                <a class="header__basket header__btn" href="#">Корзина</a>
-            </div>
-        </div> *@
+    <div class="wrapper">
+        @{
+            Html.RenderPartial("_HeaderArea");
+        }
 
-        <div class="header__content">
-            <div class="container">
-                <div class="header__content-inner">
-                    <div class="header__logo">
-                        <a href="#">
-                            <img src="img/logo.svg" width="300" alt="">
-                        </a>
-                    </div>
-                    <nav class="menu">
-                        <ul>
-                            <li>
-                                <a href="index.html">
-                                    <span class="icon-phone"></span>Главная
-                                </a>
-                            </li>
-                            <li>
-                            <form asp-action="Index" id="cultureForm">
-                                <label>Language</label>
-                                <select onchange="SetCulture(this.value);">
-                                    <option>Select Language</option>
-                                    @foreach (var item in locOptions.Value.SupportedUICultures)
-                                    {
-                                        <option value="@item.Name">@item.Name | @item.DisplayName</option>
-                                    }
-                                </select>
-                            </form>
-                            </li>
-                            
-                            <li><a href="product.html">Товары</a></li>
-                            <li><a href="#">Форум</a></li>
-                            <li><a href="articles.html">Статьи</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-   
-            @RenderBody()
+        @RenderBody()
 
 
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="container">
-                <div class="slider__title footer__title">
-                    КОНТАКТЫ
-                </div>
-                <div class="slider__text footer__text">
-                    Всегда рада пообщаться с вами :)
-                    Задавайте вопросы любым удобным способом!
-                </div>
-                <ul class="footer__list">
-                    <li> <a class="slider__text footer__phone" href="tel:79372040580">+7(937)2040580</a> </li>
-                    <li> <a class="slider__text footer__email" href="#">bruShop@gmail.com</a> </li>
-                </ul>
-
-            </div>
-        </div>
-        <div class="footer__copy">
-            <div class="container">
-                <div class="copy__text">
-                    Made by DreamTeam ®
-                </div>
-            </div>
-        </div>
-    </footer>
+        @{
+            Html.RenderPartial("_FooterArea");
+        }
+    </div>
+    
 
     @section scripts{
         <script>

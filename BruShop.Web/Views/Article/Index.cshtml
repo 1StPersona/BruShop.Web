@@ -1,0 +1,32 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+@model List<Article>
+
+<section class="news">
+    <div class="container">
+        <div class="menu  news__top">
+            <div class="news__title-box">
+                <div class="slider__title news-title">
+                    О КИСТОЧКАХ
+                </div>
+                <div class="slider__text news-text">
+                    Интересный факты о кисточках, описание процесса изготовления, знакомство с материалами и многое другое
+                </div>
+            </div>
+        </div>
+        <div class="news__inner">
+            @foreach(Article item in Model){
+                <a href="#" class="news__blog1">
+                    <div class="news__img">
+                        <img src=@item.PathToImg width="350" alt="">
+                        <div class="news__date slider__text">@item.Date.ToString()?.Trim().Substring(0, 10)</div>
+                    </div>
+                    <div class="news__blog-title">@item.Title</div>
+                    <div class="news__blog-text">@item.Description</div>
+                </a>
+            }
+        </div>
+    </div>
+</section>

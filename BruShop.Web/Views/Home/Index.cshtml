@@ -5,6 +5,8 @@
 @inject IOptions<RequestLocalizationOptions> locOptions
 @inject IViewLocalizer _lang
 
+@model HomeData
+
 @{
     Layout = "_Layout";
 }
@@ -68,52 +70,27 @@
                 </div>
             </div>
             <div class="about__btn">
-                <a href="#">
+                <a asp-controller="Product" asp-action="Index">
                     Показать все товары
                 </a>
             </div>
         </div>
         <div class="about__items">
-            <div class="about__item">
-                <img src="img/img_about-1.jpg" width="200" alt="">
-                <div class="slider__title about__item-title">
-                    Лайнер (синтетика)
+            @for(int i = 0; i < 3; i++){
+                <div class="about__item">
+                    <img src=@Model.products[i].PathToImg width="200" alt="">
+                    <div class="slider__title about__item-title">
+                        @Model.products[i].Name
+                    </div>
+                    <div class="slider__text about__item-text">
+                        @Model.products[i].Description
+                    </div>
+                    <div class="about__item-btn">
+                        <a class="about__item-link" href="#">Подробнее</a>
+                        <a class="default-btn basket-btn" href="#">В корзину</a>
+                    </div>
                 </div>
-                <div class="slider__text about__item-text">
-                    Хорошо управляемая кисть позволяет проводить длинные тонкие линии.
-                </div>
-                <div class="about__item-btn">
-                    <a class="about__item-link" href="#">Подробнее</a>
-                    <a class="default-btn basket-btn" href="#">В корзину</a>
-                </div>
-            </div>
-            <div class="about__item">
-                <img src="img/img_about-2.jpg" width="200" alt="">
-                <div class="slider__title about__item-title">
-                    Круглая (белка + енот)
-                </div>
-                <div class="slider__text about__item-text">
-                    cvbnj xdfghsdfghjk dfghjkl jkl dfghjcfghjk cvb Вбирает в себя много цвета и воды, имеет острый
-                    кончик.
-                </div>
-                <div class="about__item-btn">
-                    <a class="about__item-link" href="#">Подробнее</a>
-                    <a class="default-btn basket-btn" href="#">В корзину</a>
-                </div>
-            </div>
-            <div class="about__item">
-                <img src="img/img_about-3.jpg" width="200" alt="">
-                <div class="slider__title about__item-title">
-                    Плоская (синтетика)
-                </div>
-                <div class="slider__text about__item-text">
-                    Подходит для заливок и хорошо протирает бумагу
-                </div>
-                <div class="about__item-btn">
-                    <a class="about__item-link" href="#">Подробнее</a>
-                    <a class="default-btn basket-btn" href="#">В корзину</a>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
@@ -146,6 +123,7 @@
     </div>
 </section>
 
+<!--
 <section class="form">
     <div class="container">
         <div class="form__inner">
@@ -198,6 +176,8 @@
     </div>
 
 </section>
+-->
+
 
 <section class="news">
     <div class="container">
@@ -216,67 +196,47 @@
                 </a>
             </div>
         </div>
-        <div class="news__inner">
+        <div class="news__inner" style="display: flex">
             <div class="news__slider">
                 <div class="news__slider-inner">
-                    <div class="news__slider-item">
-                        <div class="slider__title news__slider-title">
-                            ОТЗЫВЫ
+                    @foreach(Review item in Model.reviews){
+                        <div class="news__slider-item">
+                            <div class="slider__title news__slider-title">
+                                ОТЗЫВЫ
+                            </div>
+                            <div class="slider__text news__slider-text">
+                                @item.Description
+                            </div>
+                            <div class="slider__text news__slider-author">
+                                @item.Author
+                            </div>
                         </div>
-                        <div class="slider__text news__slider-text">
-                            Огонь! Лучшие кисточки! 1000000000000000000000000000000000 000000000000000000000000000000000 00000000000/10
-                        </div>
-                        <div class="slider__text news__slider-author">
-                            Создатель кисточек
-                        </div>
-                    </div>
-                    <div class="news__slider-item">
-                        <div class="slider__title news__slider-title">
-                            ОТЗЫВЫ
-                        </div>
-                        <div class="slider__text news__slider-text">
-                            Всем рекомендую
-                        </div>
-                        <div class="slider__text news__slider-author">
-                            Всё ещё создатель кисточек!
-                        </div>
-                    </div>
-                    <div class="news__slider-item">
-                        <div class="slider__title news__slider-title">
-                            ОТЗЫВЫ
-                        </div>
-                        <div class="slider__text news__slider-text">
-                            Создают шедевры практически сами!
-                        </div>
-                        <div class="slider__text news__slider-author">
-                            И снова создатель кисточек
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
+
             <a href="#" class="news__blog">
                 <div class="news__img">
-                    <img src="img/news-1.jpg" width="270" alt="">
+                    <img src=@Model.articles[0].PathToImg width="270" alt="">
                     <div class="news__date slider__text">14.05.22</div>
                 </div>
-                <div class="news__blog-title">Из чего я делаю кисточки?</div>
+                <div class="news__blog-title">@Model.articles[0].Title</div>
                 <div class="news__blog-text">
-                    Я их не делаю(((((((((((((((((((((( (((((((((((((((((((((((((((((((((
-                    ((((((((((((((((((((((((((((((((((((((((
+                    @Model.articles[0].Description
                 </div>
             </a>
             <a href="#" class="news__blog">
                 <div class="news__img">
-                    <img src="img/news-2.jpg" width="270" alt="">
+                    <img src=@Model.articles[0].PathToImg width="270" alt="">
                     <div class="slider__text news__date">14.05.22</div>
                 </div>
-                <div class="news__blog-title">Где найти время на любимое дело?</div>
-                <div class="news__blog-text ">Если узнаете, расскажите мне, пжлст</div>
+                <div class="news__blog-title">@Model.articles[1].Title</div>
+                <div class="news__blog-text ">@Model.articles[1].Description</div>
             </a>
         </div>
     </div>
 </section>
-<div id="modal">
+<div id="modal" >
     <form action="index.php" method="post">
         <div class="form__box-inner">
             <div class="form__box-left">

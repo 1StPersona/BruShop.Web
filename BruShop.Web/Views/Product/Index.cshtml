@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model List<Product>
+    <section class="about2">
+        <div class="container">
+            <div class="menu  about__top">
+                <div class="about__title-box">
+                    <div class="slider__title about-title">
+                        ТОВАРЫ
+                    </div>
+                    <div class="slider__text about-text">
+                        А какая кисть будет идеальной для вас?
+                        Скорее смотрите каталог и помните: "Не художник выбирает кисточку, а кисточка художника"
+                    </div>
+                </div>
+            </div>
+            <div class="about__items">
+                @foreach(Product item in Model){
+                    <div class="about__item">
+                    <img src=@item.PathToImg width="200" alt="">
+                    <div class="slider__title about__item-title">
+                        @item.Name
+                    </div>
+                    <div class="slider__text about__item-text">
+                        @item.Description
+                    </div>
+                    <div class="about__item-btn">
+                        <a class="about__item-link" href="#">Подробнее</a>
+                        <a class="default-btn basket-btn" href="#">В корзину</a>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+@section scripts{
+    <script>
+        function SetCulture(selectValue) {
+            var culture = "/?culture=" + selectValue;
+            console.log(culture);
+            document.getElementById("cultureForm").action = culture;
+            document.getElementById("cultureForm").submit();
+            //cultureForm
+        }
+    </script>
+    }

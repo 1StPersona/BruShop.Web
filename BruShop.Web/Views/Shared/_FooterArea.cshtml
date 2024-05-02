@@ -1,0 +1,38 @@
+﻿<footer class="footer">
+    <div class="footer__content">
+        <div class="container">
+            <div class="slider__title footer__title">
+                КОНТАКТЫ
+            </div>
+            <div class="slider__text footer__text">
+                Всегда рада пообщаться с вами :)
+                Задавайте вопросы любым удобным способом!
+            </div>
+            <ul class="footer__list">
+                <li> <a class="slider__text footer__phone" href="tel:79372040580">+7(937)2040580</a> </li>
+                <li> <a class="slider__text footer__email" href="#">bruShop@gmail.com</a> </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="footer__copy">
+        <div class="container">
+            <div class="copy__text">
+                Made by DreamTeam ®
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+@section scripts{
+    <script>
+        function SetCulture(selectValue) {
+            var culture = "/?culture=" + selectValue;
+            console.log(culture);
+            document.getElementById("cultureForm").action = culture;
+            document.getElementById("cultureForm").submit();
+            //cultureForm
+        }
+    </script>
+    }
