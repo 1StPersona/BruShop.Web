@@ -33,7 +33,6 @@ builder.Services.AddLocalization(option => option.ResourcesPath = "Resources");
 
 
 
-builder.Host.UseSerilog();
 
 Log.Logger = new LoggerConfiguration()
         .WriteTo.Seq("http://localhost:5341/")
