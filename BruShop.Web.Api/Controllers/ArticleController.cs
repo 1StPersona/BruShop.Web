@@ -11,11 +11,7 @@ namespace BruShop.Web.Api.Controllers
         private BruShopContext _db;
         private readonly ILogger<ArticleController> _logger;
 
-
-
-
-        
-        public ArticleController(BruShopContext db,ILogger<ArticleController>_logs)
+        public ArticleController(BruShopContext db,ILogger<ArticleController> _logs)
         {
             _db = db;
             _logger=_logs;
@@ -25,9 +21,7 @@ namespace BruShop.Web.Api.Controllers
         public IEnumerable<Article> Get()
         {
             var articles = _db.Articles;
-            _logger.LogInformation("LogInfo");
-            _logger.LogError("LogError");
-            _logger.LogWarning("LogWarning");
+            _logger.LogInformation("Get request executed");
             return articles;
         }
     }

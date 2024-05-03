@@ -9,6 +9,7 @@ using Serilog.Events;
 using Serilog.Sinks.MSSqlServer;
 
 
+string connectionString = "data source=178.89.186.221, 1434;initial catalog=aprelev_db;user id=aprelev_user;password=hH583z3i^;MultipleActiveResultSets=True;application name=EntityFramework;TrustServerCertificate=True";
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,19 +35,13 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 builder.Services.AddLocalization(option => option.ResourcesPath = "Resources");
 
 
-
 builder.Host.UseSerilog();
 
-/*Log.Logger = new LoggerConfiguration()
-        .WriteTo.Seq("http://localhost:5341/")
+Log.Logger = new LoggerConfiguration()
         .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
+        .WriteTo.MSSqlServer(connectionString, sinkOptions: new MSSqlServerSinkOptions { TableName = "Logs" })
         .CreateLogger();
 builder.Services.AddSingleton<Serilog.ILogger>(Log.Logger);
-*/
-
-
-
-
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
