@@ -6,6 +6,8 @@ using Microsoft.Extensions.Options;
 using System.Globalization;
 using Serilog;
 using Serilog.Events;
+using Serilog.Sinks.MSSqlServer;
+
 
 
 
@@ -33,13 +35,14 @@ builder.Services.AddLocalization(option => option.ResourcesPath = "Resources");
 
 
 
+builder.Host.UseSerilog();
 
-Log.Logger = new LoggerConfiguration()
+/*Log.Logger = new LoggerConfiguration()
         .WriteTo.Seq("http://localhost:5341/")
         .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
         .CreateLogger();
 builder.Services.AddSingleton<Serilog.ILogger>(Log.Logger);
-
+*/
 
 
 
