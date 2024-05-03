@@ -18,13 +18,6 @@ builder.Host.UseSerilog();
 
 string connectionString = "data source=178.89.186.221, 1434;initial catalog=aprelev_db;user id=aprelev_user;password=hH583z3i^;MultipleActiveResultSets=True;application name=EntityFramework;TrustServerCertificate=True";
 
-/*Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Debug()
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-    .WriteTo.MSSqlServer(connectionString, sinkOptions: new MSSqlServerSinkOptions { TableName = "Logs" })
-    .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();*/
-
 
 Log.Logger = new LoggerConfiguration()
         .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)

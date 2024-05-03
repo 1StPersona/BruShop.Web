@@ -18,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 ///</summary>
 builder.Services.AddMvc().AddMvcLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
-    
+
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var culture = new[]
